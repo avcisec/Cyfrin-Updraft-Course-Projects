@@ -53,12 +53,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"StorageFactory.sol": {
-			"keccak256": "0x850f78832ec2febdeccf163e72b578904ca3a5132fd61418191048e89f713290",
+		"Contracts/SimpleStorage.sol": {
+			"keccak256": "0xcde8505691ee899e808c743fb552e16a37db06073e255066352819d1f03ed76f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ecb4de4c6ff2c6209589a197c6acd6f867e2e4628ae0c6c09911eedb57b9cc8e",
-				"dweb:/ipfs/QmVj5rxLMF5XbHMnuzujx3wfdRPreG6aqmCPcLZZreyWnV"
+				"bzz-raw://dc045cf32554d2b70b2641fd60cfc598763707356be12575a291f3023efe7b61",
+				"dweb:/ipfs/QmZX99rcPvGkV7q9GHFKUDnmRe7Gb9rvgeBQFKYHJ6Y487"
+			]
+		},
+		"StorageFactory.sol": {
+			"keccak256": "0x6dca08b22e8e14a530633a47a1817bd67903db744acaac74f934a4115118c800",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d1350dde3da6a8c55f73a2eb8b03cf3979424e577f5169b6a5031222a57529a7",
+				"dweb:/ipfs/Qmci5hQ6AnXwbncX42cwSrnoecrRhUXnbiRZ9UWHpmnadt"
 			]
 		}
 	},
