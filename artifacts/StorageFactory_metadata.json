@@ -6,15 +6,14 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "createSimpleStorageContract",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "simpleStorage",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "ListOfSimpleStorageContracts",
 				"outputs": [
 					{
 						"internalType": "contract SimpleStorage",
@@ -23,6 +22,50 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "createSimpleStorageContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_simpleStorageIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "sfGet",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_simpleStorageIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_newSimpleStorageNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "sfStore",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -62,11 +105,11 @@
 			]
 		},
 		"StorageFactory.sol": {
-			"keccak256": "0x6dca08b22e8e14a530633a47a1817bd67903db744acaac74f934a4115118c800",
+			"keccak256": "0x612c49c32ace183355a1dfed0dac1d1554c2a23ea25c941f059669eabaaf03d5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d1350dde3da6a8c55f73a2eb8b03cf3979424e577f5169b6a5031222a57529a7",
-				"dweb:/ipfs/Qmci5hQ6AnXwbncX42cwSrnoecrRhUXnbiRZ9UWHpmnadt"
+				"bzz-raw://83886880760c332ed380715a7fbedc8a790c51dcdb5496cd2b65ad968706cef5",
+				"dweb:/ipfs/QmYLvjYdt2TtqRrgtZ8TRJ1TxCULVimjiSn6pUH8K6ihkj"
 			]
 		}
 	},
