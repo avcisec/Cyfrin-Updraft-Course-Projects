@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity  0.8.24;
+pragma solidity  ^0.8.2;
 // StorageFactory birden fazla SimpleStorage contract deploy etmek icin olusturulmus bir contract.
 
 // pragma solidity ^0.8.0;
