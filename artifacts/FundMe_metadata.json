@@ -1,15 +1,66 @@
 {
 	"compiler": {
-		"version": "0.8.26+commit.8a97fa7a"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "funder",
+						"type": "address"
+					}
+				],
+				"name": "addressToAmountFunded",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountFunded",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "fund",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "funders",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minimumUsd",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -26,9 +77,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"test.sol": "FundMe"
+			"FundMe.sol": "FundMe"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -40,12 +91,28 @@
 		"remappings": []
 	},
 	"sources": {
-		"test.sol": {
-			"keccak256": "0x81a716f42586f9bda29d0d450d09b718fe828f29853c01f4d78bf7a44369f336",
+		"@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0x257a8d28fa83d3d942547c8e129ef465e4b5f3f31171e7be4739a4c98da6b4f0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://912e1e749bd221e6facbb7af69cadbcb2bd8e31f98fa4738fd81821f2dbff0c7",
-				"dweb:/ipfs/QmdZwuXLtcuEHpdKvpeUKo3U3Uzx74my1Vb4Razdxf62fK"
+				"bzz-raw://6d39e11b1dc7b9b8ccdabbc9be442ab7cda4a81c748f57e316dcb1bcb4a28bf9",
+				"dweb:/ipfs/QmaG6vz6W6iEUBsbHSBob5mdcitYxWjoygxREHpsJHfWrS"
+			]
+		},
+		"FundMe.sol": {
+			"keccak256": "0xbe59e629caa7d592403fd9011b64a78107190b799ef8ec5dd809d68ff9bcc620",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4d5bf94f0552d2c2a00a8ee1167069fce926e8d4f010a24c4b4f045ee15be903",
+				"dweb:/ipfs/QmTfQ5Rq8Khxtw6ogXAXAYHDq4tDX1sSxcW4cK592wfRfk"
+			]
+		},
+		"priceConverter.sol": {
+			"keccak256": "0x13566500a3c5b7bc56e6df959eb2d5fb08101c8ca7cb49ba170a4e975e885836",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://15db68ffff8415a5e7eff66a5649be51a62291ad1112e646d2d33c0e53b313ff",
+				"dweb:/ipfs/QmX3VBaQ9wUwB3Kcp2LD4pH3YAWrvstYZZ6haZyGNTtnGK"
 			]
 		}
 	},
