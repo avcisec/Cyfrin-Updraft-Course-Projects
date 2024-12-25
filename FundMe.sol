@@ -4,6 +4,9 @@ pragma solidity ^0.8.18;
 import {priceConverter} from "./priceConverter.sol";
 //810.110 gas
 //constant belirleyince 790.152 gas 
+
+error Not0wner();
+
 contract FundMe {
 // MIMIMUM_USD cagirildiginda 351 gas
     using priceConverter for uint256;
@@ -15,11 +18,17 @@ contract FundMe {
     mapping(address funder => uint256 amountFunded) public addressToAmountFunded;
 
     // address veri tipinde owner isminde degisken tanimliyoruz.
-    address public owner;
+    // immutable ekledikten sonra i_ ekliyoruz cunku bunun immutable bir variable oldugunu belirtmek icin.
+    // immutable degisken tanimlayinca 766,561 gas
+    // 2580 gas i_owner call price without immutable 
+    // 444 gas i_owner call price with immutable 
+    // immutable ve constant degiskenlerin gas tasarrufu yapma sebebi, veriyi storage slotunda  saklamak yerine
+    // direkt olarak kontratin bytecode u olarak depoliyoruz.
+    address public immutable i_owner;
     // constructor kontrat gonderildikten hemen sonra icerigindeki kosulu veya fonksiyonu yerine getirir.
     constructor() {
         // msg.sender owner olarak tanimlandi.
-        owner = msg.sender;
+        i_owner = msg.sender;
     }
 
     function fund() public payable  {
@@ -62,16 +71,25 @@ contract FundMe {
             /*------------------------------------------------------------------------------------ */
             (bool callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
             require(callSuccess, "call failed");
+
             /* ------------------------------------------------------------------------------------- */
 
         }
         // modifier tanimladik. Daha sonra ihtiyacimiz olan her fonksiyona keyword olarak only0wner ekleyecegiz. _; require oncesinde eklenirse, 
         // only0wner kosulunu ekledigimiz fonksiyon once calisir ve daha sonra kosul tanimlanir.
         modifier only0wner() {
-            require(msg.sender == owner, "you are not the owner");
+           // require(msg.sender == i_owner, "you are not the owner");
+           if(msg.sender != i_owner) { revert Not0wner(); }
             _;
         }
 
- 
-
+ // Birisi fund fonksiyonunu kullanmadan dogrudan ETH gonderirse ne olur?
+ // receive()
+ // fallback()
+    receive() external payable { 
+       fund(); 
+    }
+    fallback() external payable {
+        fund();
+     }
 }
